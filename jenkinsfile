@@ -1,0 +1,24 @@
+pipeline {
+    agent {
+        dockerfile {
+            filename 'dockerfile'
+        }
+    }
+    stages {
+        stage('Checkout') {
+            steps{
+                script{
+                    git branch: 'main', credentialsId: 'GITLABCRED', url: 'https://gitlab.com/its-services/peo_unimate/jenkins/jenkins_lab.git'
+                    sh "ls -lart ./*"
+                }
+            }
+        }
+        stage('exe') {
+            steps{
+                sh 'python fibonacci.py'
+            }
+            
+        }
+    }
+    
+}
