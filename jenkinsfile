@@ -1,21 +1,21 @@
 pipeline {
     agent {
         dockerfile {
-            filename 'dockerfile'
+           filename 'dockerfile'
         }
     }
     stages {
         stage('Checkout') {
             steps{
                 script{
-                    git branch: 'main', credentialsId: 'GITLABCRED', url: 'https://gitlab.com/its-services/peo_unimate/jenkins/jenkins_lab.git'
+					git branch: 'main', url: 'https://github.com/solbarre/file_python.git'
                     sh "ls -lart ./*"
                 }
             }
         }
         stage('exe') {
             steps{
-                sh 'python fibonacci.py'
+                sh 'python devise.py'
             }
             
         }
