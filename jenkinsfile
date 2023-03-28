@@ -12,12 +12,12 @@ pipeline {
 					   echo "on ne fait pas de checkout"
 					}
 					else {
-                       git branch: 'main', credentialsId: 'GITLABCRED', url: 'https://gitlab.com/its-services/peo_unimate/jenkins/jenkins_lab.git'
-                       sh "ls -lart ./*"
+                       //git branch: 'main', credentialsId: 'GITLABCRED', url: 'https://gitlab.com/its-services/peo_unimate/jenkins/jenkins_lab.git'
+                       //sh "ls -lart ./*"
+					
+						git branch: 'main', url: 'https://github.com/solbarre/file_python.git'
+						sh "ls -lart ./*"
 					}
-					//git branch: 'main', url: 'https://github.com/solbarre/file_python.git'
-                    //sh "ls -lart ./*"
-
                 }
             }
         }
