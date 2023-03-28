@@ -8,8 +8,13 @@ pipeline {
         stage('Checkout') {
             steps{
                 script{
-                    git branch: 'main', credentialsId: 'GITLABCRED', url: 'https://gitlab.com/its-services/peo_unimate/jenkins/jenkins_lab.git'
-                    sh "ls -lart ./*"
+				    if (fileExists('dockerfile_devise.txt') {
+					   echo "on ne fait pas de checkout"
+					}
+					else {
+                       git branch: 'main', credentialsId: 'GITLABCRED', url: 'https://gitlab.com/its-services/peo_unimate/jenkins/jenkins_lab.git'
+                       sh "ls -lart ./*"
+					}
                 }
             }
         }
