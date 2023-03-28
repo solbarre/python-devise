@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {
             steps{
                 script{
-				    if (fileExists('dockerfile_devise.txt')) {
+				    if (fileExists('devise.py')) {
 					   echo "on ne fait pas de checkout"
 					}
 					else {
