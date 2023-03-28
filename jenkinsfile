@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {
             steps{
                 script{
-				    ls
+				    sh 'ls'
 				    if (fileExists('devise.py')) {
 					   echo "on ne fait pas de checkout"
 					}
